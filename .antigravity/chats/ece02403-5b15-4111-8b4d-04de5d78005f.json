@@ -28,6 +28,18 @@
       "created_at": "2026-10-29T22:27:03.887Z",
       "sender": "macOS",
       "is_cancelled": false
+    },
+    {
+      "id": "18852850-0a72-409c-9f03-98bc9bf3a16b",
+      "role": "user",
+      "content": "Ce ai pus la source control",
+      "status": "pending",
+      "model": "gemini-3.8-flash-high",
+      "client_type": "gemini-bridge",
+      "parent_message_id": null,
+      "created_at": "2026-10-29T22:27:33.838Z",
+      "sender": "ios",
+      "is_cancelled": false
     }
   ]
 }
