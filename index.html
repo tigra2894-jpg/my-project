@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="CyberPulse 26">
+  <title>CyberPulse 2026 - iOS Test Edition</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=SF+Pro+Display:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Containerul jocului adaptat pentru ecranele iOS -->
+  <div id="game-container">
+    <!-- Dynamic Island / Header iOS 26 -->
+    <header class="ios-header">
+      <div class="dynamic-island" id="dynamic-island">
+        <span class="island-camera"></span>
+        <div class="island-content">
+          <span class="status-dot"></span>
+          <span id="island-text">iOS 26 ENGINE ACTIVE</span>
+        </div>
+      </div>
+      <div class="stats-bar">
+        <div class="stat-pill">
+          <span class="stat-label">SCOR</span>
+          <span class="stat-val" id="score-display">0</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">RECORD</span>
+          <span class="stat-val" id="best-score-display">0</span>
+        </div>
+        <div class="stat-pill" id="multiplier-pill">
+          <span class="stat-label">BOOST</span>
+          <span class="stat-val" id="boost-display">100%</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Canvas-ul principal al jocului -->
+    <canvas id="game-canvas"></canvas>
+
+    <!-- Ecran Start / Meniu -->
+    <div id="start-overlay" class="game-overlay active">
+      <div class="glass-card">
+        <div class="badge">TEST ENGINE // VER 26.0</div>
+        <h1 class="game-title">CYBER<span>PULSE</span></h1>
+        <p class="tagline">iOS 26 Test Runner</p>
+
+        <div class="instructions-card">
+          <div class="inst-item">
+            <span class="icon">👆</span>
+            <span>Trage stânga / dreapta cu degetul pentru a pilota nava</span>
+          </div>
+          <div class="inst-item">
+            <span class="icon">⚡</span>
+            <span>Colectează cristalele cuantice de energie neon</span>
+          </div>
+          <div class="inst-item">
+            <span class="icon">🛡️</span>
+            <span>Atinge de două ori pentru Hyper-Scut la viteză mare</span>
+          </div>
+        </div>
+
+        <button id="start-btn" class="ios-btn primary">
+          <span>START JOC</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Ecran Game Over -->
+    <div id="gameover-overlay" class="game-overlay">
+      <div class="glass-card">
+        <div class="badge alert">SIMULARE TERMINATĂ</div>
+        <h2 class="game-title over">IMPACT<span>!</span></h2>
+        
+        <div class="result-stats">
+          <div class="result-row">
+            <span>Scor atins:</span>
+            <strong id="final-score">0</strong>
+          </div>
+          <div class="result-row">
+            <span>Distanță parcursă:</span>
+            <strong id="final-distance">0 m</strong>
+          </div>
+          <div class="result-row highlight">
+            <span>Cel mai bun scor:</span>
+            <strong id="final-best">0</strong>
+          </div>
+        </div>
+
+        <button id="restart-btn" class="ios-btn primary">
+          <span>RESTART SIMULARE</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Controale tactile speciale / Buton Scut -->
+    <div class="touch-controls">
+      <button id="shield-btn" class="hud-circle-btn" aria-label="Activează Scut">
+        <span class="btn-glow"></span>
+        <span class="btn-icon">⚡</span>
+        <span class="btn-text">SCUT</span>
+      </button>
+    </div>
+
+    <!-- Indicator Safe Area jos -->
+    <div class="ios-home-indicator"></div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
